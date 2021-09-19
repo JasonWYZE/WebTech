@@ -8,14 +8,35 @@
     <style>
       h1{
         text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Times New Roman', Times, serif;
+        color:darkcyan;
       }
 
       ul{
         border-bottom-style: solid;
-        border-bottom-color: black;
-
+        border-bottom-color: red;
+        color:darkgray;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.2em;
       }
+
+      body{
+        background: cadetblue;
+        margin-right: 100px;
+        margin-left: 150px;
+      }
+      img{
+        width: 50px;
+      }
+     hr{
+       background-color:red;
+       height:2px;
+       border: 0;
+     }
+     div > p{
+       background-color: black;
+     }
+     <!--This div-p means I chose all children p tag in the div tag and set its background color to yellow-->
     </style>
 
   </head>
@@ -32,7 +53,25 @@
     </ul>
     
     <a href= "index.html"><img src="images/home.jpg" alt = "home"></a>
+  <table>
+    <tr>
+      <th>My Interest</th>
+      <th>My Works in WebTech</th>
+    </tr>
+      <th>Tenis</th>
+      <th><a href="ex01.html">Exercise 01</a></th>
+  </table>
+ <!--This table tag create a table while th tag is create a new row and th tag is a new column--> 
+    <hr>
 
+    <div>
+      <p>hello world</p>
+      <ul>
+        <p>hello world</p>
+      </ul>
+    </div>
+
+    <p>hello world</p>
 
   </body>
 </html>
