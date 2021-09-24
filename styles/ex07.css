@@ -22,3 +22,17 @@ p {
   padding: 40px 10px 10px 10px;
   width: 50%;
 }
+
+#paragraph-2{
+  background-color: aquamarine;
+}
+
+.blue-background{
+  background-color: blue;
+}
+
+P::first-line{
+  background-color: blueviolet;
+}
+
+
