@@ -1,0 +1,17 @@
+
+tr:hover{
+     background-color: red;
+}
+
+caption{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+th{
+    background-color: yellowgreen;
+}
+
+tr:nth-child(even){
+    background-color: gray;
+}
