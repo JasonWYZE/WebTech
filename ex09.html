@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Exercise 2</title>
+
+    <link rel="stylesheet" href="styles/ex09.css" />
+  </head>
+  <body>
+    <h1>In-Class Exercise 09 - HTML Form</h1>
+
+    <div id="border">
+      <form method="POST" action="https://oim-apis.herokuapp.com/form2">
+        <div>
+          <label for="lastname">Last Name: </label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            maxlength="100"
+            placeholder="Last name"
+          />
+        </div>
+
+        <div>
+          <label for="firstname">First Name: </label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            maxlength="100"
+            placeholder="First name"
+          />
+        </div>
+
+        <div>
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          />
+        </div>
+
+        <div>
+          Gender
+          <label
+            >Male
+            <input type="radio" name="gender" id="male" />
+          </label>
+
+          <label>
+            Female
+            <input type="radio" name="gender" id="female" />
+          </label>
+        </div>
+
+        <div id="topics">My favorite topics are:</div>
+
+        <div>
+          <input
+            type="checkbox"
+            id="basichtml"
+            name="topics"
+            value="basichtml"
+          />
+          <label for="basichtml">Basic HTML</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="css" name="topics" value="css" />
+          <label for="css">CSS</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="tables" name="topics" value="tables" />
+          <label for="tables">Tables</label>
+        </div>
+
+        <div>
+          <div>
+            <label for="grade">Which grade do you expect to receive?</label>
+
+            <select name="grade" id="grade">
+              <option value="A">A</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B">B</option>
+              <option value="B-">B-</option>
+              <option value="C+">C+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="comments">Leave a Reply:</label>
+          </div>
+          <div>
+            <textarea
+              name="comments"
+              id="comments"
+              cols="25"
+              rows="5"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+        </div>
+
+        <button type="submit">
+          <img src="images/mailbox.png" height="30" alt="submit button" />
+        </button>
+        <button type="reset">
+          <img src="images/reset.png" height="30" alt="reset button" />
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
