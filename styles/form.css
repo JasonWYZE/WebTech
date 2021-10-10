@@ -1,0 +1,21 @@
+fieldset{
+    border: 10px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+legend{
+    padding: 3px 6px;
+    font-weight: bold;
+}
+
+div{
+    padding: 5px;
+}
+
+form{
+    background-color: lightslategray;
+}
+
+body{
+    background-color: lightsteelblue;
+}

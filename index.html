@@ -1,108 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" 
-          href="https://fonts.googleapis.com/css?family=Grechen Fuemen">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Grechen Fuemen"
+    />
     <meta charset="UTF-8" />
-    <meta name = "description" content = "This is all about the WebTech works">
-    <meta name = "keywords" content = "WebTech, OIM3690">
-    <meta name = "Author" content = "JasonWang"> 
+    <meta name="description" content="This is all about the WebTech works" />
+    <meta name="keywords" content="WebTech, OIM3690" />
+    <meta name="Author" content="JasonWang" />
     <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
-  
+
     <title>All About Myself</title>
 
-<style>
+    <style>
+      h1 {
+        font-family: serif;
+        color: black;
+        text-align: center;
+      }
 
-  h1{
-    font-family: serif;
-    color: black;
-    text-align: center;
-  }
+      h3 {
+        font-family: cursive;
+        color: coral;
+        text-align: center;
+      }
 
-  h3{
-    font-family: cursive;
-    color:coral;
-    text-align: center;
-  }
+      #navbar {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+      }
 
-  h2{
-    color:blue;
-    margin:left;
-    font-family: Grechen Fuemen;
-  }
+      li {
+        float: left;
+        border-right: 1px solid white;
+      }
 
-  P{
-    font-family: Arial, Helvetica, sans-serif;
-    color:burlywood;
-    font-size: 1.2em;
-  }
+      li a,
+      .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
 
-  P::first-line{
-    font-size: 30px;
-  }
+      li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: rgb(18, 153, 86);
+      }
 
-  img{
-    float:left;
-    margin:20px;
-    height:100px;
-  }
+      li.dropdown {
+        display: inline-block;
+      }
 
-  body{
-    background: darkcyan;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
 
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: chocolate;
+        display: block;
+        text-align: left;
+      }
 
-  </style>
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
 
-</head>
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
+      h2 {
+        color: blue;
+        margin: left;
+        font-family: Grechen Fuemen;
+      }
+
+      P {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        font-size: 1.2em;
+      }
+
+      P::first-line {
+        font-size: 30px;
+      }
+
+      img {
+        float: left;
+        margin: 20px;
+        height: 100px;
+      }
+
+      body {
+        background: lightblue;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+
+      #nav{
+        text-align: center;
+      }
+    </style>
+  </head>
 
   <body>
-    <h1>All About Jason</h1>
-
-    <h3>Contact Information</h3>
-    <ul>
-      <li>Github Profile: https://github.com/JasonWYZE</li>
-      <li>Linkedin: https://www.linkedin.com/in/yanze-wang-0241ze/</li>
-      <li> Email: <a href ="mailto:jason.ze41@gmail.com">jason.ze41@gmail.com</a></li>
-    </ul>
-    
-    <h3>Quick Links</h3>
-    <ul>
-      <li>
-          <a href = "#About_Me"  >About Me</a>
-      </li>
-      <li>
-        <a href = "#My_Interests"  >My Interests</a>
-      </li>
-    </ul>
-
-  <div id = "About_Me">
-   <h2>About Me</h2>
-   <p>
-    <img src = "images/myself.jpg" alt = "Myself">
-     I came to <a href = "https://www.babson.edu/">Babson College</a> since I heard it is a very good business school. I plan to do data analyst after graduation.
-   </p>
-   </div>
-
-   <hr>
-
-   <div id = "My_Interests">
-    <h2>My Interests</h2>
-    <p>
-     
-      I start to play <a href = "https://www.usta.com">tennis</a> when I first get into high school. My roommate taught me how to play it. I really like the sound when I hit the ball back. It makes me feel very good. 
-    </p>
+    <div id = "nav">
+      <header>
+        <ul id="navbar">
+          <li><a href="#">Home</a></li>
+          <li><a href="https://github.com/JasonWYZE">Github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/yanze-wang-0241ze/"
+              >Linkedin</a
+            >
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="droptn">Dropdown</a>
+            <div class="dropdown-content">
+              <a href="hw2-1.html">HW2-1</a>
+              <a href="hw2-2.html">HW2-2</a>
+              <a href="hw2-bbc.html">HW2-BBC</a>
+            </div>
+          </li>
+        </ul>
+      </header>
     </div>
-    <hr>
 
-    <a href = "sitemap.html" alt = "My work">My Work in WebTech</a>
-    
+    <div id="About_Me">
+      <h2>About Me</h2>
+      <p>
+        <img src="images/myself.jpg" alt="Myself" />
+        I came to <a href="https://www.babson.edu/">Babson College</a> since I
+        heard it is a very good business school. I plan to do data analyst after
+        graduation.
+      </p>
+    </div>
+
+    <hr />
+
+    <div id="My_Interests">
+      <h2>My Interests</h2>
+      <p>
+        I start to play <a href="https://www.usta.com">tennis</a> when I first
+        get into high school. My roommate taught me how to play it. I really
+        like the sound when I hit the ball back. It makes me feel very good.
+      </p>
+    </div>
+    <hr />
+
+    <a href="sitemap.html" alt="My work">My Work in WebTech</a>
+
     <p>&trade;</p>
     <p>&reg;</p>
-
 
     <table>
       <tr></tr>

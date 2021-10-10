@@ -1,33 +1,54 @@
 
-
-td{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
 table{
     border: 1px solid lightgray;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
 }
 
-#c1{
-    column-width: 15%;
+td{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border: 1px solid lightgray;
+}
+caption{
+    font-size: xx-large;
+    font-weight: bold;
 }
 
-#c2{
-    column-width: 30%;
+
+.buybutton{
+    background: linear-gradient(#51a9ee,#147bcd);
+    color:white;
+    font-size: 20px;
 }
 
-#c3{
-    column-width: 30%;
+.c1{
+    width: 15%;
+    font-weight: bold;
 }
 
-#c4{
-    column-width: 10%;
+.title{
+    font-weight: bold;
 }
 
-#c5{
-    column-width: 10%;
+.c2{
+    width: 30%;
 }
+
+
+
+.c3{
+    width: 10%;
+}
+
+img{
+    width: 80%;
+    height: 80%;
+}
+
+#rednumber{
+    color: red;
+}
+
