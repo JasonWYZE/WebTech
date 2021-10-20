@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 13</title>
+  </head>
+  <body>
+    <h1>Manipulating Styles and Images</h1>
+    <div>
+      <img
+        src="images/tiger1.jpg"
+        alt="Tiger 1"
+        title="Tiger is walking"
+        width="300"
+        class="animal"
+        id="tiger"
+      />
+      <img
+        src="images/elephant.jpg"
+        alt="elephant"
+        title="elephant is walking"
+        width="300"
+        class="animal"
+        id="elephant"
+      />
+    </div>
+
+    <script>
+      function enlargeImage(x, y) {
+        for (var i = 0; i < arguments.length; i++) {
+          const myImg = document.getElementById(arguments[i]);
+          let w = myImg.width;
+          w = w + 30;
+          myImg.width = w;
+        }
+      }
+     
+      function ChangeBack(x, y) {
+        for (var i = 0; i < arguments.length; i++) {
+          const myImg = document.getElementById(arguments[i]);
+          myImg.width = 300;
+        }
+      }
+
+      document
+        .getElementById("tiger", "elephant")
+        .addEventListener("mouseover", function () {
+          enlargeImage("tiger", "elephant");
+        });
+      document
+        .getElementById("tiger", "elephant")
+        .addEventListener("mouseleave", function () {
+          ChangeBack("tiger", "elephant");
+        });
+    </script>
+  </body>
+</html>
