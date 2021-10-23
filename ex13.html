@@ -28,7 +28,8 @@
 
     <script>
       function enlargeImage(x, y) {
-        for (var i = 0; i < arguments.length; i++) {
+        let i =0;
+        for ( i = 0; i < arguments.length; i++) {
           const myImg = document.getElementById(arguments[i]);
           let w = myImg.width;
           w = w + 30;
@@ -37,7 +38,8 @@
       }
      
       function ChangeBack(x, y) {
-        for (var i = 0; i < arguments.length; i++) {
+        let i = 0;
+        for ( i = 0; i < arguments.length; i++) {
           const myImg = document.getElementById(arguments[i]);
           myImg.width = 300;
         }
