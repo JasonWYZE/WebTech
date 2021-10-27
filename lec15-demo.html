@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Lec 15 Demo</title>
+  </head>
+  <body>
+      <p>x = <span id = "x-span">2021</span></p>
+      <p>y = <span id = "y-span">1025</span></p>
+      <p>result = <span id = "result-span">?</span></p>
+      <button id="calc-btn">calculate</button>
+      <script>
+          function calculate(){
+              const intX = parseInt(document.querySelector('#x-span').innerText);
+              const intY = parseInt(document.querySelector('#y-span').innerText);
+              result = intX + intY;
+              const r = document.getElementById("result-span");
+              r.innerText = result;
+              return result;
+          }
+          document.getElementById("calc-btn").onclick = function() {
+              calculate();
+          }
+      </script>
+  </body>
+</html>
+
+
+
