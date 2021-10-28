@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/ex15.css" />
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <div id="border">
+      <form action="" id="form-calculator" method="post">
+        <div>
+          <label for="result">Your Result: </label>
+          <input type="text" id="result" name="result" value="" />
+        </div>
+
+        <div>
+          <label for="number1">Number 1: </label>
+          <input type="text" id="number1" name="number1" value="" />
+
+          <select name="calculate" id="operation">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="mult">*</option>
+            <option value="div">/</option>
+          </select>
+
+          <label for="number2">Number 2: </label>
+          <input type="text" id="number2" name="number2" value="" />
+        </div>
+
+        <div>
+          <button type="button" id="calculate">Calculate</button>
+
+          <button type="button" id = "clear"> Clear </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function Calculator() {
+        const myForm = document.getElementById("form-calculator");
+        let n1 = parseFloat(myForm.number1.value);
+        let n2 = parseFloat(myForm.number2.value);
+      
+        let operation = myForm["operation"].value;
+
+        if (operation == "add") {
+          myForm["result"].value = n1 + n2;
+        } 
+        else if (operation == "sub") {
+          myForm["result"].value = n1 - n2;
+        } 
+        else if (operation == "mult") {
+          myForm["result"].value = n1 * n2;
+        } 
+        else{
+          myForm["result"].value = n1 / n2;
+        }
+      }
+
+      function Clear(){
+        const myForm = document.getElementById("form-calculator");
+        myForm["number1"].value = ""
+        myForm["number2"].value = ""
+        myForm["result"].value = ""
+        
+      }
+
+      document.getElementById("calculate").onclick = function () {
+        event.preventDefault();
+        console.log("calculating");
+        console.log(operation.value);
+        Calculator();
+        console.log(number1.value);
+        console.log(number2.value);
+      };
+
+      document.getElementById("clear").onclick = function(){
+        Clear();
+    
+      }
+    </script>
+  </body>
+</html>
