@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quiz 3 - Question 1</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      div {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      li {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+   
+
+    <h1>Quiz 3 - Question 1</h1>
+    <div>
+      <p>Use internal JavaScript to implement the features below:</p>
+      <ul>
+        <li>
+          When you click on the beaver image, the text "Go Beavers!" should be
+          shown in green font, size 2em with a yellow background.
+        </li>
+        <li>
+          When you click on the home image, the text "Home! Sweet Home!" should
+          be shown in red font, bold, size 2em, and using Arial font.
+        </li>
+        <li>When one text is shown, the other should not be displayed.</li>
+        <li>
+          Creating only <strong>one</strong> function for all events will
+          receive <strong>10</strong> bonus points.
+        </li>
+      </ul>
+      <div>
+        <div>
+          <img
+              alt="Beaver"
+              src="images/beaver.jpg"
+              title="beaver"
+              width="100"
+              id="beaver"
+            />
+          <p id="beaverText">
+            Go Beavers!
+          </p>
+        </div>
+        <div>
+          <img
+              alt="Home"
+              src="images/home.jpg"
+              title="home"
+              width="100"
+              id="home"
+            />
+          <p id = "homeText">
+            Home! Sweet home!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function BeaversHome(arg) {
+        let triger = arg.id
+        console.log(triger)
+
+        if(triger == "beaver")
+        {
+        let beaverT = document.getElementById("beaverText");
+        beaverT.display = "inline"
+        beaverT.style.color = "green";
+        beaverT.style.fontSize = "2em";
+        beaverT.style.backgroundColor = "yellow";
+        BolBeaver = false;
+
+        let homeT = document.getElementById("homeText");
+        homeT.style.display = "none"
+        }
+        else{
+        let homeT = document.getElementById("homeText");
+        homeT.display = "inline"
+
+        homeT.style.color = "red";
+        homeT.style.fontSize = "2em";
+        homeT.style.fontFamily = "Arial";
+
+        let beaverT = document.getElementById("beaverText");
+        beaverT.style.display = "none"
+        }
+      }
+
+    
+      document.getElementById("beaver").onclick = function () {
+        BeaversHome(beaver);
+      };
+      document.getElementById("home").onclick = function () {
+        BeaversHome(home);
+      };
+    </script>
+  </body>
+</html>
