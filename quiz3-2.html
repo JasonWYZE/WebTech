@@ -1,65 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Quiz 3 - Question 2</title>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quiz 3 - Question 2</title>
+    <style>
       h1 {
-          text-align: center;
+        text-align: center;
       }
 
       div {
-          width: 80%;
-          margin-left: auto;
-          margin-right: auto;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       li {
-          margin-top: 5px;
+        margin-top: 5px;
       }
-  </style>
-</head>
-<body>
-  <h1>Quiz 3 - Question 2</h1>
-  <div>
-    <p>Use internal JavaScript to implement the features below:</p>
-    <ul>
-      <li>
-        When user mouses-over any of the jerseys, the picture is changed to
-        display back of that jersey (images/xx2.jpg); the heading is changed
-        to "XX's Jersey".
-      </li>
-      <li>
-        When user mouses-out any of the jerseys, the picture is changed to
-        display front of that jersey; the heading is changed to "Let's Go,
-        Celtics".
-      </li>
-      <li>
-        Owners of the three jerseys are, from left to right, Larry Bird, Jayson Tatum, and Jaylen Brown.
-      </li>
-      <li>
-        Creating only one function for all mouseover events and only one
-        function for all mouseout events will receive 10 bonus points.
-      </li>
-    </ul>
+    </style>
+  </head>
+  <body>
+    <h1>Quiz 3 - Question 2</h1>
     <div>
-      <img
-        alt="Larry Bird's Jersey"
-        height="200"
-        src="images/bird1.webp"
-      />
-      <img
-        alt="Jayson Tatum's Jersey"
-        height="200"
-        src="images/tatum1.webp"
-      />
-      <img
-        alt="Jaylen Brown's Jersey"
-        height="200"
-        src="images/brown1.webp"
-      />
+      <p>Use internal JavaScript to implement the features below:</p>
+      <ul>
+        <li>
+          When user mouses-over any of the jerseys, the picture is changed to
+          display back of that jersey (images/xx2.jpg); the heading is changed
+          to "XX's Jersey".
+        </li>
+        <li>
+          When user mouses-out any of the jerseys, the picture is changed to
+          display front of that jersey; the heading is changed to "Let's Go,
+          Celtics".
+        </li>
+        <li>
+          Owners of the three jerseys are, from left to right, Larry Bird,
+          Jayson Tatum, and Jaylen Brown.
+        </li>
+        <li>
+          Creating only one function for all mouseover events and only one
+          function for all mouseout events will receive 10 bonus points.
+        </li>
+      </ul>
+      <div>
+        <img
+          alt="Larry Bird's Jersey"
+          height="200"
+          src="images/bird1.webp"
+          id="brid"
+        />
+        <img
+          alt="Jayson Tatum's Jersey"
+          height="200"
+          src="images/tatum1.webp"
+          id="tatum"
+        />
+        <img
+          alt="Jaylen Brown's Jersey"
+          height="200"
+          src="images/brown1.webp"
+          id="brown"
+        />
+      </div>
     </div>
-  </div>
-</body>
+
+    <script>
+      function backDisplay(arg) {
+        let triger = arg.id;
+        console.log(triger);
+   
+
+          if (triger == "brid") {
+            let brid = document.getElementById("brid");
+            brid.src = "images/bird2.webp";
+          } else if (triger == "tatum") {
+            let tatum = document.getElementById("tatum");
+            tatum.src = "images/tatum2.webp";
+          } else {
+            let brown = document.getElementById("brown");
+            brown.src = "images/brown2.webp";
+          }
+        
+        }
+
+
+        function frontDisplay(arg){
+            let triger = arg.id;
+            if (triger == "brid") {
+            let brid = document.getElementById("brid");
+            brid.src = "images/bird1.webp";
+          } else if (triger == "tatum") {
+            let tatunm = document.getElementById("tatum");
+            tatunm.src = "images/tatum1.webp";
+          } else {
+            let brown = document.getElementById("brown");
+            brown.src = "images/brown1.webp";
+          }
+        }
+        
+
+      document.getElementById("brid").onmouseenter = function () {
+        backDisplay(brid);
+      };
+      document.getElementById("brid").onmouseleave = function () {
+        frontDisplay(brid);
+      };
+
+      document.getElementById("tatum").onmouseenter = function () {
+        backDisplay(tatum);
+      };
+      document.getElementById("tatum").onmouseleave = function () {
+        frontDisplay(tatum);
+      };
+
+      document.getElementById("brown").onmouseenter = function () {
+        backDisplay(brown);
+      };
+      document.getElementById("brown").onmouseleave = function () {
+        frontDisplay(brown);
+      };
+    </script>
+  </body>
 </html>
