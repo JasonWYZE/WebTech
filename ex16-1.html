@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 16-1</title>
+    <style>
+      form {
+        margin: 0 auto;
+        width: 80%;
+        padding: 30px;
+        font-family: Arial;
+        font-weight: bold;
+        background-color: Silver;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: Arial;
+      }
+      div {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Processing form inputs</h1>
+    <form action="" method="post" id="newForm">
+      <div>
+        <label
+          >Enter your name: <input name="name" type="text" size="20" id="name"
+        /></label>
+        <label>
+          Enter your age :
+          <input name="age" size="4" type="text" id="age" />
+        </label>
+      </div>
+      <div>
+        <label>
+          Select your gender:
+          <select name="gender" id="gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label
+          >Your information will appear here: <br />
+          <textarea
+            cols="40"
+            name="result"
+            id="textarea"
+            rows="4"
+            readonly
+          ></textarea>
+        </label>
+      </div>
+
+      <div>
+        <label
+          >Hide my age.
+          <input name="noAge" type="checkbox" id="hide" />
+        </label>
+      </div>
+      <div>
+        <input name="submit" type="button" value="Show" id="show" />
+        <input name="reset" type="reset" value="Clear" />
+      </div>
+    </form>
+
+    <script>
+      function information() {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age");
+        if ((name.length == 0) | isNaN(age.value)) {
+          alert("Please fill your information");
+          return false;
+        }
+        let gender = document.getElementById("gender").value;
+        let result = document.getElementById("textarea");
+        let check = document.getElementById("hide").checked;
+        console.log(check);
+        if (check) {
+          age.style.visibility = "hidden";
+          result.value = "name: " + name + " \r\n" + "gender: " + gender;
+        } 
+        else {
+            age.style.visibility = "visible";
+          result.value =
+            "name: " +
+            name +
+            "\r\n" +
+            "age: " +
+            age.value +
+            " \r\n" +
+            "gender: " +
+            gender;
+        }
+      }
+
+      document.getElementById("show").onclick = function () {
+        event.preventDefault();
+        information();
+      };
+    </script>
+  </body>
+</html>

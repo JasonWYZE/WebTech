@@ -70,36 +70,32 @@
       function backDisplay(arg) {
         let triger = arg.id;
         console.log(triger);
-   
 
-          if (triger == "brid") {
-            let brid = document.getElementById("brid");
-            brid.src = "images/bird2.webp";
-          } else if (triger == "tatum") {
-            let tatum = document.getElementById("tatum");
-            tatum.src = "images/tatum2.webp";
-          } else {
-            let brown = document.getElementById("brown");
-            brown.src = "images/brown2.webp";
-          }
-        
+        if (triger == "brid") {
+          let brid = document.getElementById("brid");
+          brid.src = "images/bird2.webp";
+        } else if (triger == "tatum") {
+          let tatum = document.getElementById("tatum");
+          tatum.src = "images/tatum2.webp";
+        } else {
+          let brown = document.getElementById("brown");
+          brown.src = "images/brown2.webp";
         }
+      }
 
-
-        function frontDisplay(arg){
-            let triger = arg.id;
-            if (triger == "brid") {
-            let brid = document.getElementById("brid");
-            brid.src = "images/bird1.webp";
-          } else if (triger == "tatum") {
-            let tatunm = document.getElementById("tatum");
-            tatunm.src = "images/tatum1.webp";
-          } else {
-            let brown = document.getElementById("brown");
-            brown.src = "images/brown1.webp";
-          }
+      function frontDisplay(arg) {
+        let triger = arg.id;
+        if (triger == "brid") {
+          let brid = document.getElementById("brid");
+          brid.src = "images/bird1.webp";
+        } else if (triger == "tatum") {
+          let tatunm = document.getElementById("tatum");
+          tatunm.src = "images/tatum1.webp";
+        } else {
+          let brown = document.getElementById("brown");
+          brown.src = "images/brown1.webp";
         }
-        
+      }
 
       document.getElementById("brid").onmouseenter = function () {
         backDisplay(brid);
