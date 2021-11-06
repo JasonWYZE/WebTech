@@ -40,31 +40,50 @@
   </head>
   <body>
     <h1>Celsius Fahrenheit Converter</h1>
-    <form action=""  method="post">
+    <form action="" method="post">
       <div id="d1">
         <label
           >Celsius:
-          <input name="cel" size="6" type="text" id = "celsius" />
+          <input name="cel" size="6" type="text" id="celsius" />
         </label>
         <label
           >Fahrenheit:
-          <input name="far" size="6" type="text" id = "fahrenheit" />
+          <input name="far" size="6" type="text" id="fahrenheit" />
         </label>
       </div>
       <div>
-        <input name="submit" type="button" value="Convert" id = "convert" />
-        <input name="reset" type="reset" value="Clear" id = "reset"/>
+        <input name="submit" type="button" value="Convert" id="convert" />
+        <input name="reset" type="reset" value="Clear" />
       </div>
     </form>
     <script>
-        function converter(){
-            let c = document.getElementById("celsius").value;
-            let f = document.getElementById("fahrenheit").value;
-            if(c.length !== 0 | isNaN() ){
-                c
-            }
-            else if(f.length ! == 0 | )
+      function converter() {
+        let c = document.getElementById("celsius");
+        console.log(c.value)
+        let f = document.getElementById("fahrenheit");
+        if ((c.value.length == 0 & f.value.length ==0) | isNaN(c.value) | isNaN(f.value))
+        {
+            alert("Please enter either celsius or fahrenheit, or make sure you are entering number for the converter.")
+            console.log("hello world")
+            return false
         }
+        else if(f.value.length == 0)
+        {
+            f.value = c.value*(9/5)+32
+            console.log(c.value)
+        }
+        else if(c.value.length == 0)
+        {
+            c.value = (f.value-32)*(5/9)
+            console.log(f.value)
+        }
+      }
+
+
+      document.getElementById("convert").onclick = function () {
+        event.preventDefault();
+        converter();
+      };
     </script>
   </body>
 </html>
