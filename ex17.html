@@ -56,7 +56,7 @@
       <div>
         <label>
           Your magazine selections:<br />
-          <textarea name="result" cols="30" rows="4" readonly></textarea>
+          <textarea name="result" cols="30" rows="4" id = "textarea" readonly></textarea>
         </label>
       </div>
       <div>
@@ -66,43 +66,57 @@
     </form>
 
     <script>
-      function backgroud_color() {
+      function backgroud_color() 
+      {
         const colors = document.getElementById("my-form").elements["colors"];
         let userChoice;
         console.log("hello");
-        for (let i = 0; i < colors.length; i++) {
-          if (colors[i].checked) {
+        for (let i = 0; i < colors.length; i++) 
+        {
+          if (colors[i].checked) 
+          {
             userChoice = colors[i].value;
           }
         }
         document.getElementById("my-form").style.backgroundColor = userChoice;
       }
 
-      function magazine(){
-        const mags = document.getElementById("my-form").elements["mags
-        "];
-        let userChoice;
-        console.log("hello");
-        for (let i = 0; i < colors.length; i++) {
-          if (colors[i].checked) {
-            userChoice = colors[i].value;
+
+      function magazine()
+      {
+        const mags = document.getElementById("my-form").elements["mags"];
+        let userChoice = []
+        let index = 0;
+        let textarea = document.getElementById("textarea")
+        for (let i = 0; i < colors.length; i++) 
+        {
+          if (mags[i].checked) 
+          {
+            userChoice[index] = mags[i].value;
+            index++;
           }
         }
-        document.getElementById("my-form").style.backgroundColor = userChoice;
+        textarea.innerText = userChoice;
       }
-      })
+      
+
+
 
       const colors = document.getElementById("my-form").elements["colors"];
       const magazines = document.getElementById("my-form").elements["mags"];
-      for (let i = 0; i < colors.length; i++) {
-        document.getElementsByName("colors")[i].onclick = function () {
+      for (let i = 0; i < colors.length; i++) 
+      {
+        document.getElementsByName("colors")[i].onclick = function () 
+        {
           backgroud_color();
-        };
+        }
       }
 
-      for (let i = 0; i < colors.length; i++) {
-        document.getElementsByName("mags")[i].onclick = function () {
-          magazines();
+      for (let i = 0; i < colors.length; i++) 
+      {
+        document.getElementsByName("mags")[i].onclick = function () 
+        {
+            magazine();
         };
       }
     </script>
