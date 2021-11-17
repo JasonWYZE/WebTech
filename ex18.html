@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 18</title>
+
+    <style>
+      #tiger{
+        border: 5px solid yellow;
+      }
+    </style>
+  </head>
+
+
+
+
+  <body>
+    <img src="images/tiger1.jpg" alt="tiger" id="tiger" />
+    <p id = 'tigerText'></p>
+    <script>
+      const slides = ["images/tiger1.jpg",
+      "images/tiger2.jpg",
+      "images/tiger3.jpg",
+      "images/tiger4.jpg",
+      ];
+      const colors = ['yellow','green','blue','red'];
+      const text = ['Tiger Walking','Tiger Looking at you','Tiger looking to left', 'Two Tigers']
+      let global_counter = 0;
+      let i = 0;
+
+      function slidesShow()
+      {
+        let local_counter = 0;
+        let tigerImage = document.getElementById("tiger");
+        let tigerText = document.getElementById("tigerText");
+            if(i === slides.length){
+                i=0;
+
+            }
+            tigerImage.src = slides[i];
+            tigerImage.style.borderColor = colors[i];
+            tigerText.innerText = text[i] + "\n" + 'global counter = ' + global_counter + "\n" + "local counter = " + i; 
+            i++;
+            global_counter++;
+
+            setTimeout(slidesShow,1000)
+      }
+
+      document.querySelector('body').onload = function () {
+       slidesShow();
+      }
+    </script>
+  </body>
+</html>

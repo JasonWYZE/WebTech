@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Text</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #lyrics {
+        position: absolute;
+        color: Navy;
+        font-family: Arial;
+      }
+      div {
+        position: relative;
+        border: 1px solid black;
+        height: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        background-color: Yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Moving Text</h1>
+    <div>
+      <h3 id="lyrics">This text will move</h3>
+    </div>
+
+
+    <script>
+      const msgList = [
+        "Hey Jude, don't make it bad",
+        "Take a sad song and make it better",
+        "Remember to let her into your heart",
+        "Then you can start to make it better",
+      ];
+      const lyrics = document.getElementById("lyrics");
+      let p = 5;  // moving space od each lyrics
+      let i = 0; // the index of lyrics in msgList
+
+      //all the variables above are global variables
+
+      // 
+
+      function move() {
+        lyrics.innerHTML = msgList[i];
+        lyrics.style.left = p + "px";
+        if (p > document.querySelector('div').clientWidth - 350) {
+          p = 5;
+          i++;
+          if (i === msgList.length) {
+            i = 0;
+          }
+        } else {
+          p = p + 5;
+        }
+        setTimeout(move, 50); // by changing to smaller number, it will move faster, 
+      }
+
+      // document.addEventListener("DOMContentLoaded", move);     
+      
+      document.querySelector("body").onload = move;
+    </script>
+  </body>
+</html>
