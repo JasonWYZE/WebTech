@@ -52,43 +52,46 @@
           animation should stop.
         </li>
         <li>
-          For full points, let two numbers reach to the targets at same
-          time. (5 points)
+          For full points, let two numbers reach to the targets at same time. (5
+          points)
         </li>
       </ul>
     </div>
     <div class="center">
       <div class="counter-container">
         <i class="fab fa-instagram fa-4x"></i>
-        <div class="counter" data-target="8000" id = "ins">0</div>
+        <div class="counter" data-target="8000" id="ins">0</div>
         <span>Instagram Followers</span>
       </div>
 
       <div class="counter-container">
         <i class="fab fa-youtube fa-4x"></i>
-        <div class="counter" data-target="5000" id = "youtube">0</div>
+        <div class="counter" data-target="5000" id="youtube">0</div>
         <span>YouTube Subscribers</span>
       </div>
     </div>
     <script>
-         
-        function socialmedia()
+      let i = 1;
+      function socialmedia() {
+        let ins = document.getElementById("ins");
+        let youtube = document.getElementById("youtube");
+
+        if ((ins.value == 8000) | (youtube.value == 5000) | i === 41) 
         {
-            let ins = document.getElementById("ins")
-            let youtube = document.getElementById("youtube")
-            
-            
-            for (let i = 1; i <= 40; i++)
-            {
-                ins.innerText = i*200
-                youtube.innerText = i*125
-            }
+          return false
+        } 
+        else {
+          ins.innerText = i * 200;
+          youtube.innerText = i * 125;
+          i++;
         }
 
+        setTimeout(socialmedia, 50);
+      }
 
-        document.querySelector("body").onload = function(){
-            setTimeout(socialmedia,50)
-        }
+      document.querySelector("body").onload = function () {
+        socialmedia();
+      };
     </script>
   </body>
 </html>
