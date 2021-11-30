@@ -82,14 +82,13 @@
           (num1.value > num2.value) |
           isNaN(num1.value) |
           isNaN(num2.value) |
-          (num1.value < 0)|
+          (num1.value < 0) |
           ((num1.value.length === 0) & (num2.value.length === 0))
         ) {
           alert("Please make sure you are entering correct input");
           return false;
         }
-        for (let i = (parseInt(num1.value) + 1); i <= num2.value; i++) {
-         
+        for (let i = parseInt(num1.value) + 1; i <= num2.value; i++) {
           product = product * i;
         }
 
