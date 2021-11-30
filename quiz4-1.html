@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quiz 4-1</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.2rem;
+      }
+      div {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .center {
+        text-align: center;
+      }
+      .red {
+        color: red;
+      }
+      form {
+        background-color: lightgray;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      form div {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center">Quiz 4-1</h1>
+    <div>
+      <p>Use internal JavaScript to implement the features below:</p>
+      <ul>
+        <li>
+          The user will enter two integers (the first number must be greater
+          than 0) in the two text inputs.
+        </li>
+        <li>
+          When Calculate button is clicked, the
+          <span class="red">product</span> of <b>all</b> the integers between
+          these two numbers (inclusive) will be calculated and displayed. For
+          example, if the two numbers are 2 and 5, then the product is 120
+          (because 120 = 2 * 3 * 4 * 5).
+        </li>
+        <li>
+          For full points, you need to validate the inputs properly. (5 points)
+        </li>
+      </ul>
+    </div>
+    <div>
+      <form class="center">
+        <div>
+          <label
+            >From:
+            <input name="from" size="10" type="text" id="num1" />
+          </label>
+          <label
+            >To:
+            <input name="to" size="10" type="text" id="num2" />
+          </label>
+        </div>
+        <div>
+          <input name="calc" type="button" value="Calculate" id="calculate" />
+          <input name="reset" type="reset" value="Reset" />
+        </div>
+        <div id="result">The product is ?.</div>
+      </form>
+    </div>
+    <script>
+      function product() {
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        let result = document.getElementById("result");
+        let product = num1.value;
+
+        if (
+          (num1.value > num2.value) |
+          isNaN(num1.value) |
+          isNaN(num2.value) |
+          (num1.value < 0)|
+          ((num1.value.length === 0) & (num2.value.length === 0))
+        ) {
+          alert("Please make sure you are entering correct input");
+          return false;
+        }
+        for (let i = (parseInt(num1.value) + 1); i <= num2.value; i++) {
+         
+          product = product * i;
+        }
+
+        result.innerText = "The product is " + product;
+      }
+
+      document.getElementById("calculate").onclick = function () {
+        product();
+      };
+    </script>
+  </body>
+</html>
