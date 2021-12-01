@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex16-1</title>
+    <style>
+      form {
+        margin: 0 auto;
+        width: 80%;
+        padding: 30px;
+        font-family: Arial;
+        font-weight: bold;
+        background-color: Silver;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: Arial;
+      }
+      div {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Processing form inputs</h1>
+    <form id = "form-feedback" action="" method="post">
+      <div>
+        <label
+          >Enter your name: <input name="name" type="text" size="20" 
+        /></label>
+        <label>
+          Enter your age:
+          <input name="userAge" size="4" type="text" />
+        </label>
+      </div>
+      <div>
+        <label>
+          Select your gender:
+          <select name="userGender">
+            <option value="Woman">Female</option>
+            <option value="Man">Male</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label
+          >Your information will appear here: <br />
+          <textarea cols="40" name="userResults" rows="4" readonly></textarea>
+        </label>
+      </div>
+     <div>
+        <label
+          >Hide my age.
+          <input name="noAge" type="checkbox" />
+        </label>
+      </div> 
+      <div>
+        <input id="click-btn" name="submit-btn" type="button" value="Show"  />
+        <input name="reset" type="reset" value="Clear" />
+      </div>
+      <script>
+        function f() {
+          //console.log("Awesome!");
+          //1. get the input values
+          const myForm = document.getElementById("form-feedback"); 
+          let yourName = myForm["name"].value;
+          let yourAge = myForm["userAge"].value;
+          let yourGender = myForm["userGender"].value;
+          
+          //2. display the inputs aka. change the value of textarea 
+          //to the inputs
+          //then add the validation
+          let inputs = 
+            "name: " + yourName + "\nage:" + yourAge + "\ngender: " + yourGender;
+            //console.log(inputs);
+            myForm["userResults"].innerText = inputs;
+          
+         
+          // do the validation before displaying them
+          if (yourName.length == 0 || yourAge.length == 0) {
+            alert("please enter both name and age");
+          } else if (isNaN(yourAge)){
+            alert("please enter a valid age");
+          }
+        
+          else{
+            
+          // 3. then add the validation
+      
+        }
+    }
+
+        document.getElementById("click-btn").onclick = function(){
+            f();
+        } ;
+      </script> 
+    </form>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop demo</title>
+</head>
+
+<body>
+    <h1>Demo for Arrays and <code>for</code> loops</h1>
+    <h4>Sum up all the integers from 1 to 10</h4>
+    <button>Click</button>
+    <p id="result"></p>
+    <script>
+        function calc() {
+            console.log("...starting...")
+            // let result = 1 + 2 + 3 + 4 + 5 + 6 + 7;
+
+            let result = 0;
+            console.log("Currently result is " + result);
+
+            for (let i = 1; i <= 100; i=i+2) {
+                result += i;
+                console.log("In iteration " + i + ", after adding " + i + ", the sum becomes " + result);
+                console.log("");
+            }
+            document.getElementById("result").innerText = result;
+        }
+
+        document.querySelector('button').onclick = function () {
+            calc();
+        }
+    </script>
+</body>
+
+</html>
